@@ -25,7 +25,7 @@ RCT_EXPORT_MODULE()
     if (self = [super init]) {
         centralEventQueue = dispatch_queue_create("com.openble.mycentral", DISPATCH_QUEUE_SERIAL);
         dispatch_set_target_queue(centralEventQueue, dispatch_get_main_queue());
-        centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:centralEventQueue options:@{ CBCentralManagerOptionRestoreIdentifierKey:@"myCentralManagerIdentifier" }];
+        centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:centralEventQueue];
         
         peripherals = [NSMutableDictionary new];
     }
